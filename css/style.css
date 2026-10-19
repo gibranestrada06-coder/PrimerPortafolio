@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    background: radial-gradient(#000000, purple);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Alinea las secciones de arriba hacia abajo */
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20% /* Padding superior para dar espacio al header fijo */
+}
+.main header {
+    background: radial-gradient(#B65F02, purple);
+    width: 90%;
+    margin: 0 5%;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    align-items: center;
+    border-radius: 0px 0px 50px 50px;
+    z-index: 100;
+}
+
+.main header .logo {
+    max-width: 100px;
+}
+
+.main header .navegacion {
+    display: flex;
+    flex-direction: row;
+}
+
+.main header .navegacion ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.main header .navegacion li {
+    list-style: none;
+}
+
+.main header .navegacion li a {
+    color: #ffffff;
+    position: relative;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+
+.main header .navegacion li a:hover {
+    letter-spacing: 2px;
+    color: grey;
+}
+
+.main .content {
+    animation: aparecer auto linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+    width: 100%;
+    max-width: 1100px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25%;
+    gap: 40px;
+}
+
+.main .content .texto {
+    width: 100%;
+    max-width: 650px;
+    color: #ffffff;
+}
+
+.main .content .texto h2 {
+    font-size: 2.5em;
+    font-weight: 300;
+    line-height: 1.1em;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.main .content .texto h2 span {
+    font-weight: 900;
+}
+
+.main .content .texto p, 
+.main .content .texto ul {
+    color: yellow;
+    font-size: 1.1em;
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+.main .content .texto ul {
+    padding-left: 20px;
+}
+
+/* BOTÓN */
+.btn {
+    background-color: #000000;
+    color: white;
+    border-radius: 40px;
+    text-decoration: none;
+    padding: 15px 35px;
+    display: inline-block;
+    position: relative;
+    transition: 0.25s;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    letter-spacing: 2px;
+    color: grey;
+}
+
+.imagenLat {
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    transition: 0.25s;
+}
+
+#usopp {
+    border-top-right-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#usopp:hover {
+    transform: translate(-5px, -5px);
+}
+
+.mensaje {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.imagenLat:hover .mensaje {
+    visibility: visible;
+    opacity: 1;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
